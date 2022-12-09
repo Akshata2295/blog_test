@@ -15,7 +15,6 @@ func TestCreateArticle(t *testing.T) {
 	// Switch to test mode so you don't get such noisy output
 	gin.SetMode(gin.TestMode)
 
-	
 	body := bytes.NewBuffer([]byte("{\"ApiTest\":\"PostReq\"}"))
 	req, err := http.NewRequest("POST", "/api/v1/article", body)
 	if err != nil {
@@ -55,8 +54,6 @@ func TestGetArticle(t *testing.T) {
 
 	fmt.Println(w.Body)
 }
-
-
 
 func TestListAllArticle(t *testing.T) {
 	// Switch to test mode so you don't get such noisy output

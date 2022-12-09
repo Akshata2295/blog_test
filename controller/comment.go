@@ -104,7 +104,7 @@ func CommentOnComment(c *gin.Context) {
 		"nickname":          comment.Nickname,
 		"content":           comment.Content,
 		"created_at":        comment.CreatedAt,
-		"parent_comment_id": comment.CommentID,
+		"comment_id": comment.CommentID,
 		"message":           "Succesfully posted comment",
 	})
 }

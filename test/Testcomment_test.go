@@ -44,7 +44,6 @@ func TestCommentOnComment(t *testing.T) {
 	}
 	req.Header.Set("Content-Type", "application/json")
 
-
 	router := gin.Default()
 	router.GET("api/v1/comments/:article_id/:comment_id", controller.CommentOnComment)
 
