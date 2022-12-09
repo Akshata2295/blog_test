@@ -18,5 +18,5 @@ It is a api for blog service in this we can create article and create comment an
     > go run main.go
 3. Go to http://localhost:9000
 4. Run Unit Testing
-   > Inside test folder
+   - Inside test folder
      > go test -v
