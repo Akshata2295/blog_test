@@ -12,7 +12,7 @@ import (
 func main() {
 	godotenv.Load()          // Load env variables
 	models.ConnectDataBase() // load db
-	
+
 	router := routers.SetupRouter()
 
 	port := os.Getenv("SERVER_PORT")
