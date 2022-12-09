@@ -1,9 +1,8 @@
 package routes
 
 import (
-	"fmt"
 	"blog_test/controller"
-
+	"fmt"
 
 	"github.com/gin-gonic/gin"
 )
@@ -33,16 +32,14 @@ func SetupRouter() *gin.Engine {
 	v1 := r.Group("/api/v1")
 	article := v1.Group("/")
 
-    article.POST("/article",controller.CreateArticle)
-	article.GET("/articles",controller.ListAllArticle)
-	article.GET("article/:id",controller.GetArticle)
-
+	article.POST("/article", controller.CreateArticle)
+	article.GET("/articles", controller.ListAllArticle)
+	article.GET("article/:id", controller.GetArticle)
 
 	comment := v1.Group("/")
-	 
-	comment.POST("/comment/:article_id",controller.CreateComment)
-	comment.POST("/comments/:article_id/:comment_id",controller.CommentOnComment)
-	
+
+	comment.POST("/comment/:article_id", controller.CreateComment)
+	comment.POST("/comments/:article_id/:comment_id", controller.CommentOnComment)
 
 	return r
 }

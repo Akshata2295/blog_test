@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"os"
 
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
-
 
 type Settings struct {
 	DB_HOST     string
@@ -54,12 +52,12 @@ func InitializeSettings() Settings {
 }
 
 func ConnectDataBase() {
-	
+
 	settings := InitializeSettings()
 
 	url := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v", settings.DB_USER, settings.DB_PASSWORD, settings.DB_HOST, settings.DB_PORT, settings.DB_NAME)
 	fmt.Println(url)
-	
+
 	db, err := gorm.Open(mysql.Open(url), &gorm.Config{})
 	if err != nil {
 		panic("Failed to connect to database!")
